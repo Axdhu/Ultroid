@@ -26,7 +26,7 @@ from ._help import _main_help_menu
 # ================================================#
 notmine = f"This bot is for {OWNER_NAME}"
 
-TLINK = INLINE_PIC or "https://telegra.ph/file/d9c9bc13647fa1d96e764.jpg"
+TLINK = INLINE_PIC or "https://telegra.ph/file/570dc35a7b34332eaa1db.jpg"
 helps = get_string("inline_1")
 
 add_ons = udB.get("ADDONS")
@@ -41,12 +41,6 @@ upage = 0
 
 # --------------------BUTTONS--------------------#
 
-SUP_BUTTONS = [
-    [
-        Button.url("• Repo •", url="https://github.com/TeamUltroid/Ultroid"),
-        Button.url("• Support •", url="t.me/UltroidSupport"),
-    ],
-]
 
 # --------------------BUTTONS--------------------#
 
@@ -55,7 +49,7 @@ SUP_BUTTONS = [
 async def inline_alive(o):
     MSG = "• **Ultroid Userbot •**"
     WEB0 = InputWebDocument(
-        "https://telegra.ph/file/55dd0f381c70e72557cb1.jpg", 0, "image/jpg", []
+        "https://telegra.ph/file/570dc35a7b34332eaa1db.jpg", 0, "image/jpg", []
     )
     RES = [
         await o.builder.article(
@@ -651,9 +645,9 @@ async def ibuild(e):
                     results = [
                         await builder.document(
                             _pic,
-                            title="Ultroid Op",
+                            title="",
                             text=txt,
-                            description="@TheUltroid",
+                            description="",
                             buttons=btn,
                             link_preview=False,
                         )
@@ -666,10 +660,10 @@ async def ibuild(e):
                     cont = InputWebDocument(pic, 0, mime_type, [])
                 results = [
                     await builder.article(
-                        title="Ultroid Op",
+                        title="",
                         type=_type,
                         text=txt,
-                        description="@TeamUltroid",
+                        description="",
                         include_media=include_media,
                         buttons=btn,
                         thumb=cont,
@@ -681,7 +675,7 @@ async def ibuild(e):
         except Exception as er:
             LOGS.exception(er)
     result = [
-        await builder.article("Ultroid Op", text=txt, link_preview=False, buttons=btn)
+        await builder.article("", text=txt, link_preview=False, buttons=btn)
     ]
     await e.answer(result)
 
